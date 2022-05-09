@@ -89,6 +89,8 @@ namespace GoogleARCore.Examples.HelloAR
         /// </summary>
         private bool _isQuitting = false;
 
+        private bool spawned = false;
+
         /// <summary>
         /// The Unity Awake() method.
         /// </summary>
@@ -149,8 +151,11 @@ namespace GoogleARCore.Examples.HelloAR
                     touch.position.x, touch.position.y, 1.0f, out hit);
             }
 
-            if (foundHit)
+            if (foundHit && !spawned)
             {
+
+                spawned = true;
+
                 // Use hit pose and camera pose to check if hit test is from the
                 // back of the plane, if it is, there is no need to create the anchor.
                 if ((hit.Trackable is DetectedPlane) &&
