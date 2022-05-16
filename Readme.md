@@ -17,40 +17,21 @@ Now that Unity is installed with the required version, below are the further ste
 9.  Go to Unity Hub, in the Projects tab (present in the left side), add the project.
 10. After the project has been added, double click to open the porject.
 11. You need an ARCore supported android device to run this application. Go to https://developers.google.com/ar/devices to check the supported device list.
+
 12. Select Window > Package Manager and install the following packages:
-    12.1  Multiplayer HLAPI (required by the Cloud Anchors sample)
-    12.2  XR Plugin Management (required by Instant Preview, which uses the TrackedPoseDriver)
+    1.  Multiplayer HLAPI (required by the Cloud Anchors sample)
+    2.  XR Plugin Management (required by Instant Preview, which uses the TrackedPoseDriver)
+    
 13. Go to File -> Build Setting -> Android -> Switch Platform.
-14. 
+14. In the Android settings tab, configure the following settings, under Other Settings:
+    1. Uncheck Auto Graphics API, and remove Vulkan if listed under Graphics APIs.
+    2. Check Multithreaded Rendering.
+    3. Change package name to com.Example.MarkerlessImplementation.
+    4. Set Minimum API Level to Android 7.0 'Nougat' (API Level 24) or higher.
+    5. Set the Scripting Backend to IL2CPP.
+    6. Select ARM64 under Target Architectures.
 
-
-
-
-
-
-
-
-
-
-
-
-11. For Android:
-    11.1  Go to File -> Build Setting -> Android -> Switch Platform.
-    11.2  Go to Player Setting -> Player -> Other Settings -> Check Override Default Package Name.
-    11.3  Set the package name to com.joebloggs.arudemy.
-    11.4  The minimum API level should be set to 22 or higher and the targeted API level to 30.
-    11.5  The Scripting Backend should be set to IL2CPP with ARM64 enabled in the Target Architectures.
-    
-12. For iOS:
-    12.1  Go to File -> Build Setting -> iOS -> Switch Platform.
-    12.2  Go to Player Setting -> Player -> Other Settings -> Check Override Default Package Name.
-    12.3  Set the package name to com.joebloggs.arudemy.
-    12.4  The minimum targeted iOS version should be set to 12.0 or higher and a Camera Usage Description as well as a Location Usage Description should be provided.
-    12.5  The Architecture should be set to ARM64.
-    
-13. Connect the required smartphone device (android/ios).
-14. Go to File -> Build Setting -> Build and Run. Save the apk file and wait to install it on your smartphone.
-15. Once the installation is complete, you can run the application.
-16. Print the GrannyMarker.jpg image from the project folder.
-17. Open the application and point the camrea to the granny image.
+15. Connect the required smartphone device.
+16. Go to File -> Build Setting -> Build and Run. Save the apk file and wait to install it on your smartphone.
+17. Once the installation is complete, you can run the application.
 
